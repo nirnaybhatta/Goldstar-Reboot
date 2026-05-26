@@ -1,10 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Sparkles, Recycle, Trophy, Palette } from "lucide-react";
-const hero = "/src/assets/hero-sneaker.jpg";
-const shoeRed = "/src/assets/shoe-red.jpg";
-const shoeBlack = "/src/assets/shoe-black.jpg";
-const shoeBlue = "/src/assets/shoe-blue.jpg";
+import hero from "@/assets/hero-sneaker.jpg";
+import shoeRed from "@/assets/shoe-red.jpg";
+import shoeBlack from "@/assets/shoe-black.jpg";
+import shoeBlue from "@/assets/shoe-blue.jpg";
 import { Marquee } from "@/components/Marquee";
 
 export const Route = createFileRoute("/")({

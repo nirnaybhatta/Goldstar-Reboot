@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Settings, Heart, Package, Recycle } from "lucide-react";
 import { useEffect, useState } from "react";
-const shoeRed = "/src/assets/shoe-red.jpg";
-const shoeBlack = "/src/assets/shoe-black.jpg";
-const shoeBlue = "/src/assets/shoe-blue.jpg";
+import shoeRed from "@/assets/shoe-red.jpg";
+import shoeBlack from "@/assets/shoe-black.jpg";
+import shoeBlue from "@/assets/shoe-blue.jpg";
 
 export const Route = createFileRoute("/profile")({
   head: () => ({

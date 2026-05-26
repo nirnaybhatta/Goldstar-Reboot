@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X, ShoppingBag } from "lucide-react";
-const goldstarLogo = "/src/assets/goldstar-logo.png";
+import goldstarLogo from "@/assets/goldstar-logo.png";
 
 const nav = [
   { to: "/", label: "Home" },

@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Recycle, Truck, Gift, Leaf, ArrowUpRight } from "lucide-react";
-const recycleImg = "/src/assets/recycle.jpg";
+import recycleImg from "@/assets/recycle.jpg";
 
 export const Route = createFileRoute("/recycle")({
   head: () => ({
