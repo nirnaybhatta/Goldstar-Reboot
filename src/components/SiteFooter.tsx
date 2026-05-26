@@ -14,22 +14,38 @@ export function SiteFooter() {
           </p>
         </div>
         <div>
-          <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">Shop</p>
+          <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+            Shop
+          </p>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/customizer">Customizer</Link></li>
-            <li><Link to="/">Drops</Link></li>
-            <li><Link to="/">Community</Link></li>
+            <li>
+              <Link to="/customizer">Customizer</Link>
+            </li>
+            <li>
+              <Link to="/">Drops</Link>
+            </li>
+            <li>
+              <Link to="/">Community</Link>
+            </li>
           </ul>
         </div>
         <div>
-          <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">Impact</p>
+          <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+            Impact
+          </p>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/recycle">Recycle program</Link></li>
-            <li><Link to="/rewards">Rewards</Link></li>
+            <li>
+              <Link to="/recycle">Recycle program</Link>
+            </li>
+            <li>
+              <Link to="/rewards">Rewards</Link>
+            </li>
           </ul>
         </div>
         <div>
-          <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">Studio</p>
+          <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+            Studio
+          </p>
           <p className="text-sm text-muted-foreground">Kathmandu, NP</p>
           <p className="text-sm text-muted-foreground">hello@kickstar.np</p>
         </div>

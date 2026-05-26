@@ -6,7 +6,11 @@ export const Route = createFileRoute("/rewards")({
   head: () => ({
     meta: [
       { title: "Rewards & Drops — Kickstar" },
-      { name: "description", content: "Earn points by buying, recycling, referring and sharing. Climb tiers from Bronze to Legend." },
+      {
+        name: "description",
+        content:
+          "Earn points by buying, recycling, referring and sharing. Climb tiers from Bronze to Legend.",
+      },
     ],
   }),
   component: Rewards,
@@ -50,9 +54,15 @@ function Rewards() {
   return (
     <>
       <section className="mx-auto max-w-7xl px-5 pb-10 pt-16 md:pt-24">
-        <p className="font-mono text-xs uppercase tracking-widest text-electric">Play · Earn · Unlock</p>
+        <p className="font-mono text-xs uppercase tracking-widest text-electric">
+          Play · Earn · Unlock
+        </p>
         <h1 className="mt-3 max-w-3xl text-balance font-display text-5xl font-bold leading-[0.95] tracking-tight md:text-7xl">
-          Level up your <span className="inline-flex items-center gap-3">streetwear<Trophy className="size-12 text-electric md:size-16" /></span>
+          Level up your{" "}
+          <span className="inline-flex items-center gap-3">
+            streetwear
+            <Trophy className="size-12 text-electric md:size-16" />
+          </span>
         </h1>
 
         {/* Points dashboard */}
@@ -61,8 +71,12 @@ function Rewards() {
             <div className="rounded-3xl border-2 border-foreground bg-background p-8">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">Your balance</p>
-                  <p className="mt-1 font-display text-6xl font-bold tracking-tight">{points} <span className="text-base text-muted-foreground">pts</span></p>
+                  <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+                    Your balance
+                  </p>
+                  <p className="mt-1 font-display text-6xl font-bold tracking-tight">
+                    {points} <span className="text-base text-muted-foreground">pts</span>
+                  </p>
                 </div>
                 <span className="inline-flex items-center gap-2 rounded-full bg-neon px-3 py-1 text-xs font-semibold">
                   <Trophy className="size-3.5" /> Silver tier
@@ -74,13 +88,22 @@ function Rewards() {
                   <span>{next.min - points} pts to go</span>
                 </div>
                 <div className="mt-2 h-3 overflow-hidden rounded-full bg-muted">
-                  <motion.div initial={{ width: 0 }} whileInView={{ width: `${progress}%` }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="h-full bg-electric" />
+                  <motion.div
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${progress}%` }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                    className="h-full bg-electric"
+                  />
                 </div>
               </div>
 
               <div className="mt-6 grid grid-cols-4 gap-2">
                 {tiers.map((t) => (
-                  <div key={t.name} className={`rounded-xl border border-border p-3 text-center ${t.color}`}>
+                  <div
+                    key={t.name}
+                    className={`rounded-xl border border-border p-3 text-center ${t.color}`}
+                  >
                     <p className="font-display text-sm font-bold">{t.name}</p>
                     <p className="text-[10px] opacity-70">{t.min} pts</p>
                   </div>
@@ -94,9 +117,14 @@ function Rewards() {
               <p className="font-display text-base font-bold">Earn points</p>
               <ul className="mt-4 space-y-2">
                 {earn.map((e) => (
-                  <li key={e.t} className="flex items-center justify-between rounded-xl border border-border bg-background p-3">
+                  <li
+                    key={e.t}
+                    className="flex items-center justify-between rounded-xl border border-border bg-background p-3"
+                  >
                     <span className="flex items-center gap-3 text-sm font-medium">
-                      <span className="inline-flex size-8 items-center justify-center rounded-full bg-neon text-foreground">{e.icon}</span>
+                      <span className="inline-flex size-8 items-center justify-center rounded-full bg-neon text-foreground">
+                        {e.icon}
+                      </span>
                       {e.t}
                     </span>
                     <span className="font-mono text-xs font-semibold text-electric">{e.p}</span>
@@ -111,7 +139,9 @@ function Rewards() {
       {/* BADGES */}
       <section className="mx-auto max-w-7xl px-5 py-16">
         <div className="flex items-end justify-between">
-          <h2 className="font-display text-4xl font-bold tracking-tight md:text-5xl">Collectible badges</h2>
+          <h2 className="font-display text-4xl font-bold tracking-tight md:text-5xl">
+            Collectible badges
+          </h2>
           <p className="hidden text-sm text-muted-foreground md:block">3 / 6 unlocked</p>
         </div>
         <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-6">
@@ -123,12 +153,16 @@ function Rewards() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.04 }}
               className={`flex aspect-square flex-col items-center justify-center rounded-2xl border-2 p-4 text-center ${
-                b.earned ? "border-foreground bg-neon" : "border-dashed border-border bg-surface text-muted-foreground"
+                b.earned
+                  ? "border-foreground bg-neon"
+                  : "border-dashed border-border bg-surface text-muted-foreground"
               }`}
             >
               {b.earned ? <Star className="size-7" /> : <Lock className="size-6" />}
               <p className="mt-2 font-display text-sm font-bold">{b.n}</p>
-              <p className="text-[10px] uppercase tracking-widest opacity-70">{b.earned ? "Unlocked" : "Locked"}</p>
+              <p className="text-[10px] uppercase tracking-widest opacity-70">
+                {b.earned ? "Unlocked" : "Locked"}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -148,7 +182,10 @@ function Rewards() {
                 <p className="font-mono text-xs uppercase tracking-widest text-neon">{d.min}</p>
                 <p className="mt-3 font-display text-2xl font-bold">{d.n}</p>
                 <p className="mt-1 text-xs text-background/60">{d.note}</p>
-                <Link to="/customizer" className="mt-4 inline-block text-xs font-semibold underline underline-offset-4">
+                <Link
+                  to="/customizer"
+                  className="mt-4 inline-block text-xs font-semibold underline underline-offset-4"
+                >
                   Preview →
                 </Link>
               </div>

@@ -54,8 +54,22 @@ function Login({ onAuth }: { onAuth: () => void }) {
         {mode === "signup" && (
           <Field label="Full name" placeholder="Nirnay Bhatta" defaultValue="Nirnay Bhatta" />
         )}
-        <Field label="Email" type="email" value={email} onChange={setEmail} placeholder="you@kickstar.np" required />
-        <Field label="Password" type="password" value={password} onChange={setPassword} placeholder="••••••••" required />
+        <Field
+          label="Email"
+          type="email"
+          value={email}
+          onChange={setEmail}
+          placeholder="you@kickstar.np"
+          required
+        />
+        <Field
+          label="Password"
+          type="password"
+          value={password}
+          onChange={setPassword}
+          placeholder="••••••••"
+          required
+        />
 
         <button
           type="submit"
@@ -70,7 +84,10 @@ function Login({ onAuth }: { onAuth: () => void }) {
       </div>
 
       <button
-        onClick={() => { localStorage.setItem(AUTH_KEY, "guest"); onAuth(); }}
+        onClick={() => {
+          localStorage.setItem(AUTH_KEY, "guest");
+          onAuth();
+        }}
         className="w-full rounded-full border border-border bg-background py-3 text-sm font-semibold transition hover:border-foreground"
       >
         Continue as guest
@@ -90,14 +107,27 @@ function Login({ onAuth }: { onAuth: () => void }) {
 }
 
 function Field({
-  label, type = "text", value, onChange, placeholder, required, defaultValue,
+  label,
+  type = "text",
+  value,
+  onChange,
+  placeholder,
+  required,
+  defaultValue,
 }: {
-  label: string; type?: string; value?: string; onChange?: (v: string) => void;
-  placeholder?: string; required?: boolean; defaultValue?: string;
+  label: string;
+  type?: string;
+  value?: string;
+  onChange?: (v: string) => void;
+  placeholder?: string;
+  required?: boolean;
+  defaultValue?: string;
 }) {
   return (
     <label className="block">
-      <span className="mb-1.5 block font-mono text-[10px] uppercase tracking-widest text-muted-foreground">{label}</span>
+      <span className="mb-1.5 block font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+        {label}
+      </span>
       <input
         type={type}
         value={value}
@@ -126,8 +156,12 @@ function Profile() {
             N
           </div>
           <div>
-            <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">Silver tier · 980 pts</p>
-            <h1 className="mt-1 font-display text-4xl font-bold tracking-tight md:text-5xl">Nirnay Bhatta</h1>
+            <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+              Silver tier · 980 pts
+            </p>
+            <h1 className="mt-1 font-display text-4xl font-bold tracking-tight md:text-5xl">
+              Nirnay Bhatta
+            </h1>
             <p className="text-sm text-muted-foreground">Kathmandu · Member since 2025</p>
           </div>
         </div>
@@ -155,16 +189,33 @@ function Profile() {
 
         <div className="mt-8 grid gap-5 sm:grid-cols-2 md:grid-cols-3">
           {designs.map((d) => (
-            <div key={d.name} className="overflow-hidden rounded-2xl border border-border bg-background">
+            <div
+              key={d.name}
+              className="overflow-hidden rounded-2xl border border-border bg-background"
+            >
               <div className="aspect-square bg-surface">
-                <img src={d.img} alt={d.name} loading="lazy" width={1024} height={1024} className="size-full object-cover" />
+                <img
+                  src={d.img}
+                  alt={d.name}
+                  loading="lazy"
+                  width={1024}
+                  height={1024}
+                  className="size-full object-cover"
+                />
               </div>
               <div className="flex items-center justify-between p-4">
                 <div>
                   <p className="font-display font-semibold">{d.name}</p>
-                  <p className="text-xs text-muted-foreground flex items-center gap-1"><Heart className="size-3" /> {d.likes}</p>
+                  <p className="text-xs text-muted-foreground flex items-center gap-1">
+                    <Heart className="size-3" /> {d.likes}
+                  </p>
                 </div>
-                <Link to="/customizer" className="text-xs font-semibold underline underline-offset-4">Remix</Link>
+                <Link
+                  to="/customizer"
+                  className="text-xs font-semibold underline underline-offset-4"
+                >
+                  Remix
+                </Link>
               </div>
             </div>
           ))}
@@ -181,9 +232,21 @@ function Profile() {
   );
 }
 
-function Stat({ icon, k, v, accent }: { icon: React.ReactNode; k: string; v: string; accent?: boolean }) {
+function Stat({
+  icon,
+  k,
+  v,
+  accent,
+}: {
+  icon: React.ReactNode;
+  k: string;
+  v: string;
+  accent?: boolean;
+}) {
   return (
-    <div className={`rounded-2xl border p-5 ${accent ? "border-foreground bg-neon" : "border-border bg-background"}`}>
+    <div
+      className={`rounded-2xl border p-5 ${accent ? "border-foreground bg-neon" : "border-border bg-background"}`}
+    >
       <div className="flex items-center justify-between">
         <span className="font-mono text-[10px] uppercase tracking-widest opacity-70">{v}</span>
         {icon}

@@ -7,7 +7,11 @@ export const Route = createFileRoute("/customizer")({
   head: () => ({
     meta: [
       { title: "Sneaker Customizer — Kickstar" },
-      { name: "description", content: "Design your own sneakers in real time. Pick colors, soles, laces, text and graphics." },
+      {
+        name: "description",
+        content:
+          "Design your own sneakers in real time. Pick colors, soles, laces, text and graphics.",
+      },
     ],
   }),
   component: Customizer,
@@ -74,12 +78,20 @@ function Customizer() {
       <div className="md:col-span-7">
         <div className="flex items-center justify-between">
           <div>
-            <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">Live build</p>
-            <h1 className="font-display text-4xl font-bold tracking-tight md:text-5xl">Create your style.</h1>
+            <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+              Live build
+            </p>
+            <h1 className="font-display text-4xl font-bold tracking-tight md:text-5xl">
+              Create your style.
+            </h1>
           </div>
           <div className="hidden gap-2 md:flex">
-            <button className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-xs font-semibold"><Save className="size-3.5" /> Save</button>
-            <button className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-xs font-semibold"><Share2 className="size-3.5" /> Share</button>
+            <button className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-xs font-semibold">
+              <Save className="size-3.5" /> Save
+            </button>
+            <button className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-xs font-semibold">
+              <Share2 className="size-3.5" /> Share
+            </button>
           </div>
         </div>
 
@@ -106,7 +118,9 @@ function Customizer() {
         {/* Bottom bar */}
         <div className="mt-6 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-border bg-background p-4">
           <div>
-            <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Live price</p>
+            <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+              Live price
+            </p>
             <p className="font-display text-3xl font-bold">Rs {price.toLocaleString()}</p>
           </div>
           <div className="flex flex-wrap gap-2">
@@ -144,7 +158,9 @@ function Customizer() {
                   </div>
                   <span className="text-sm font-semibold">{p.name}</span>
                 </div>
-                <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Apply →</span>
+                <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                  Apply →
+                </span>
               </button>
             ))}
           </div>
@@ -165,7 +181,9 @@ function Customizer() {
                 key={l.id}
                 onClick={() => setLace(l.id)}
                 className={`rounded-xl border p-3 text-sm font-medium transition ${
-                  lace === l.id ? "border-foreground bg-foreground text-background" : "border-border hover:border-foreground"
+                  lace === l.id
+                    ? "border-foreground bg-foreground text-background"
+                    : "border-border hover:border-foreground"
                 }`}
               >
                 {l.name}
@@ -191,7 +209,9 @@ function Customizer() {
                 key={g}
                 onClick={() => setGraphic(g)}
                 className={`rounded-full border px-4 py-2 text-xs font-semibold transition ${
-                  graphic === g ? "border-foreground bg-foreground text-background" : "border-border"
+                  graphic === g
+                    ? "border-foreground bg-foreground text-background"
+                    : "border-border"
                 }`}
               >
                 {g}
@@ -217,7 +237,17 @@ function Customizer() {
   );
 }
 
-function Panel({ title, subtitle, icon, children }: { title: string; subtitle?: string; icon?: React.ReactNode; children: React.ReactNode }) {
+function Panel({
+  title,
+  subtitle,
+  icon,
+  children,
+}: {
+  title: string;
+  subtitle?: string;
+  icon?: React.ReactNode;
+  children: React.ReactNode;
+}) {
   return (
     <div className="rounded-2xl border border-border bg-background p-5">
       <div className="mb-4 flex items-center justify-between">
@@ -233,8 +263,14 @@ function Panel({ title, subtitle, icon, children }: { title: string; subtitle?: 
 }
 
 function Swatches({
-  options, value, onChange,
-}: { options: { name: string; value: string }[]; value: string; onChange: (v: string) => void }) {
+  options,
+  value,
+  onChange,
+}: {
+  options: { name: string; value: string }[];
+  value: string;
+  onChange: (v: string) => void;
+}) {
   return (
     <div className="flex flex-wrap gap-2">
       {options.map((o) => (
@@ -253,12 +289,26 @@ function Swatches({
 }
 
 function SneakerSVG({
-  upper, sole, lace, text, graphic,
-}: { upper: string; sole: string; lace: string; text: string; graphic: string }) {
+  upper,
+  sole,
+  lace,
+  text,
+  graphic,
+}: {
+  upper: string;
+  sole: string;
+  lace: string;
+  text: string;
+  graphic: string;
+}) {
   const laceColor =
-    lace === "holo" ? "url(#holo)" :
-    lace === "reflect" ? "#e7e7e7" :
-    lace === "rope" ? "#3a2a1a" : "#ffffff";
+    lace === "holo"
+      ? "url(#holo)"
+      : lace === "reflect"
+        ? "#e7e7e7"
+        : lace === "rope"
+          ? "#3a2a1a"
+          : "#ffffff";
 
   return (
     <motion.svg
@@ -275,9 +325,17 @@ function SneakerSVG({
           <stop offset="1" stopColor="#2b4dff" />
         </linearGradient>
         <pattern id="stars" width="20" height="20" patternUnits="userSpaceOnUse">
-          <text x="2" y="14" fontSize="12" fill="#ffffff80">★</text>
+          <text x="2" y="14" fontSize="12" fill="#ffffff80">
+            ★
+          </text>
         </pattern>
-        <pattern id="stripes" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <pattern
+          id="stripes"
+          width="14"
+          height="14"
+          patternUnits="userSpaceOnUse"
+          patternTransform="rotate(45)"
+        >
           <rect width="6" height="14" fill="#ffffff40" />
         </pattern>
         <pattern id="mountains" width="40" height="20" patternUnits="userSpaceOnUse">
@@ -291,7 +349,12 @@ function SneakerSVG({
       </defs>
 
       {/* Sole */}
-      <path d="M40 280 Q 60 320 130 325 L 470 325 Q 555 320 565 290 L 555 270 L 50 270 Z" fill={sole} stroke="#0a0a0a" strokeWidth="3" />
+      <path
+        d="M40 280 Q 60 320 130 325 L 470 325 Q 555 320 565 290 L 555 270 L 50 270 Z"
+        fill={sole}
+        stroke="#0a0a0a"
+        strokeWidth="3"
+      />
       {/* Sole accent */}
       <rect x="50" y="295" width="510" height="10" fill="#0a0a0a" opacity="0.15" />
 
@@ -312,12 +375,26 @@ function SneakerSVG({
       )}
 
       {/* Heel */}
-      <path d="M70 270 L 70 220 Q 95 195 130 200 L 130 270 Z" fill={upper} stroke="#0a0a0a" strokeWidth="3" opacity="0.9" />
+      <path
+        d="M70 270 L 70 220 Q 95 195 130 200 L 130 270 Z"
+        fill={upper}
+        stroke="#0a0a0a"
+        strokeWidth="3"
+        opacity="0.9"
+      />
 
       {/* Side panel / brand mark */}
       <g transform="translate(290 200) rotate(-12)">
         <rect x="-70" y="-18" width="140" height="36" rx="18" fill="#0a0a0a" />
-        <text x="0" y="6" textAnchor="middle" fontFamily="Space Grotesk, sans-serif" fontWeight="700" fontSize="18" fill={sole}>
+        <text
+          x="0"
+          y="6"
+          textAnchor="middle"
+          fontFamily="Space Grotesk, sans-serif"
+          fontWeight="700"
+          fontSize="18"
+          fill={sole}
+        >
           {text || "KICKSTAR"}
         </text>
       </g>
@@ -337,7 +414,14 @@ function SneakerSVG({
       ))}
 
       {/* Toe stitching */}
-      <path d="M170 250 Q 250 215 340 220" fill="none" stroke="#0a0a0a" strokeWidth="2" strokeDasharray="4 4" opacity="0.6" />
+      <path
+        d="M170 250 Q 250 215 340 220"
+        fill="none"
+        stroke="#0a0a0a"
+        strokeWidth="2"
+        strokeDasharray="4 4"
+        opacity="0.6"
+      />
     </motion.svg>
   );
 }

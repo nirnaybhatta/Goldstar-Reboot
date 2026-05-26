@@ -11,7 +11,11 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Kickstar — Design your own sneakers. Made in Nepal." },
-      { name: "description", content: "Customize sneakers, recycle old ones, earn rewards. Nepal's first Gen-Z streetwear footwear platform." },
+      {
+        name: "description",
+        content:
+          "Customize sneakers, recycle old ones, earn rewards. Nepal's first Gen-Z streetwear footwear platform.",
+      },
       { property: "og:image", content: hero },
     ],
   }),
@@ -50,12 +54,14 @@ function Home() {
               transition={{ delay: 0.05 }}
               className="mt-5 text-balance font-display text-5xl font-bold leading-[0.95] tracking-tight md:text-7xl"
             >
-              Wear your<br />
+              Wear your
+              <br />
               <span className="relative inline-block">
                 <span className="relative z-10">identity.</span>
                 <span className="absolute inset-x-0 bottom-1 z-0 h-4 bg-neon md:h-6" />
               </span>{" "}
-              <span className="text-muted-foreground">Step into</span><br />
+              <span className="text-muted-foreground">Step into</span>
+              <br />
               the future of streetwear.
             </motion.h1>
 
@@ -65,7 +71,8 @@ function Home() {
               transition={{ delay: 0.15 }}
               className="mt-6 max-w-md text-base text-muted-foreground md:text-lg"
             >
-              Design every stitch. Trade your old kicks. Level up. Built in Kathmandu for a generation that doesn't wear what everyone else wears.
+              Design every stitch. Trade your old kicks. Level up. Built in Kathmandu for a
+              generation that doesn't wear what everyone else wears.
             </motion.p>
 
             <motion.div
@@ -90,9 +97,21 @@ function Home() {
             </motion.div>
 
             <div className="mt-10 flex items-center gap-6 text-xs text-muted-foreground">
-              <div><span className="font-display text-2xl font-bold text-foreground">12K+</span><br />Custom builds</div>
-              <div><span className="font-display text-2xl font-bold text-foreground">3.4t</span><br />Waste recycled</div>
-              <div><span className="font-display text-2xl font-bold text-foreground">87</span><br />Drops shipped</div>
+              <div>
+                <span className="font-display text-2xl font-bold text-foreground">12K+</span>
+                <br />
+                Custom builds
+              </div>
+              <div>
+                <span className="font-display text-2xl font-bold text-foreground">3.4t</span>
+                <br />
+                Waste recycled
+              </div>
+              <div>
+                <span className="font-display text-2xl font-bold text-foreground">87</span>
+                <br />
+                Drops shipped
+              </div>
             </div>
           </div>
 
@@ -117,11 +136,16 @@ function Home() {
               <div className="absolute bottom-5 right-5 flex items-center gap-3 rounded-2xl border border-border bg-background/95 p-3 shadow-brutal-sm backdrop-blur">
                 <div className="flex -space-x-2">
                   {["bg-neon", "bg-electric", "bg-foreground", "bg-eco"].map((c) => (
-                    <span key={c} className={`size-7 rounded-full border-2 border-background ${c}`} />
+                    <span
+                      key={c}
+                      className={`size-7 rounded-full border-2 border-background ${c}`}
+                    />
                   ))}
                 </div>
                 <div>
-                  <p className="text-[10px] uppercase tracking-widest text-muted-foreground">Live price</p>
+                  <p className="text-[10px] uppercase tracking-widest text-muted-foreground">
+                    Live price
+                  </p>
                   <p className="font-display text-base font-bold">Rs 7,999</p>
                 </div>
               </div>
@@ -130,7 +154,15 @@ function Home() {
         </div>
       </section>
 
-      <Marquee items={["Designed by you", "Made in Nepal", "Recycle & earn", "Limited drops", "Streetwear futures"]} />
+      <Marquee
+        items={[
+          "Designed by you",
+          "Made in Nepal",
+          "Recycle & earn",
+          "Limited drops",
+          "Streetwear futures",
+        ]}
+      />
 
       {/* FEATURE GRID */}
       <section className="mx-auto max-w-7xl px-5 py-20">
@@ -176,10 +208,17 @@ function Home() {
         <div className="mx-auto max-w-7xl px-5 py-20">
           <div className="mb-10 flex items-end justify-between">
             <div>
-              <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">Live community</p>
-              <h2 className="mt-1 font-display text-4xl font-bold tracking-tight md:text-5xl">Trending designs</h2>
+              <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+                Live community
+              </p>
+              <h2 className="mt-1 font-display text-4xl font-bold tracking-tight md:text-5xl">
+                Trending designs
+              </h2>
             </div>
-            <Link to="/customizer" className="hidden text-sm font-semibold underline underline-offset-4 md:inline">
+            <Link
+              to="/customizer"
+              className="hidden text-sm font-semibold underline underline-offset-4 md:inline"
+            >
               Remix one →
             </Link>
           </div>
@@ -195,7 +234,14 @@ function Home() {
                 className="group relative overflow-hidden rounded-2xl border border-border bg-background transition hover:-translate-y-1 hover:shadow-brutal-sm"
               >
                 <div className="aspect-square overflow-hidden bg-surface">
-                  <img src={s.img} alt={s.name} loading="lazy" width={1024} height={1024} className="size-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <img
+                    src={s.img}
+                    alt={s.name}
+                    loading="lazy"
+                    width={1024}
+                    height={1024}
+                    className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
                 <div className="absolute left-3 top-3 rounded-full bg-foreground px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-background">
                   {s.badge}
@@ -224,7 +270,8 @@ function Home() {
               Every old shoe you drop is one less in a river.
             </h2>
             <p className="mt-4 max-w-md text-sm text-background/70">
-              We collect old footwear across Kathmandu, Pokhara and Lalitpur, then upcycle every salvageable gram into new soles. You get points. The planet gets a break.
+              We collect old footwear across Kathmandu, Pokhara and Lalitpur, then upcycle every
+              salvageable gram into new soles. You get points. The planet gets a break.
             </p>
             <Link
               to="/recycle"
@@ -248,7 +295,9 @@ function Home() {
           <div className="absolute -right-10 -top-10 size-40 rounded-full bg-electric/40 blur-2xl" />
           <p className="font-mono text-xs uppercase tracking-widest">Drop 04 · Loading</p>
           <h2 className="mt-2 max-w-2xl font-display text-5xl font-bold leading-[0.95] tracking-tight md:text-7xl">
-            Designed by you.<br />Made in Nepal.
+            Designed by you.
+            <br />
+            Made in Nepal.
           </h2>
           <Link
             to="/customizer"
@@ -263,8 +312,20 @@ function Home() {
 }
 
 function FeatureCard({
-  to, icon, title, desc, tag, accent,
-}: { to: string; icon: React.ReactNode; title: string; desc: string; tag: string; accent: string }) {
+  to,
+  icon,
+  title,
+  desc,
+  tag,
+  accent,
+}: {
+  to: string;
+  icon: React.ReactNode;
+  title: string;
+  desc: string;
+  tag: string;
+  accent: string;
+}) {
   return (
     <Link
       to={to}
@@ -272,16 +333,21 @@ function FeatureCard({
     >
       <div>
         <div className="flex items-center justify-between">
-          <span className={`inline-flex size-10 items-center justify-center rounded-full ${accent} text-foreground`}>
+          <span
+            className={`inline-flex size-10 items-center justify-center rounded-full ${accent} text-foreground`}
+          >
             {icon}
           </span>
-          <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">{tag}</span>
+          <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+            {tag}
+          </span>
         </div>
         <h3 className="mt-6 font-display text-2xl font-bold">{title}</h3>
         <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
       </div>
       <div className="mt-8 inline-flex items-center gap-2 text-sm font-semibold">
-        Explore <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+        Explore{" "}
+        <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
       </div>
     </Link>
   );
