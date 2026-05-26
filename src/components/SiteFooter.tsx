@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import goldstarLogo from "@/assets/goldstar-logo.png";
 
 export function SiteFooter() {
   return (
@@ -6,8 +7,7 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:grid-cols-4">
         <div>
           <div className="flex items-center gap-2 font-display text-xl font-bold">
-            <span className="inline-block size-2.5 rounded-full bg-neon" />
-            KICKSTAR.np
+            <img src={goldstarLogo} alt="GoldStar" className="h-6 w-auto md:h-7" />
           </div>
           <p className="mt-3 max-w-xs text-sm text-muted-foreground">
             Designed by you. Made in Nepal. Worn by a generation.
@@ -52,7 +52,7 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-border">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-2 px-5 py-6 text-xs text-muted-foreground md:flex-row md:items-center">
-          <p>© 2026 Kickstar Footwear. All rights reserved.</p>
+          <p>© 2026GoldStar. All rights reserved.</p>
           <p>Built for the next generation of Nepali streetwear.</p>
         </div>
       </div>
